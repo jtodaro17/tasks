@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title>
+<style>
+:root{--personal:#8b5cf6;--personal-bg:#f3efff;--pbha:#0f6cbd;--pbha-bg:#eaf3fb;--elmhurst:#c2410c;--elmhurst-bg:#fdf0e9;--done:#107c10;--done-bg:#e7f4e7;--prog:#b88217;--prog-bg:#fdf6e3;--pending:#616161;--pending-bg:#eef0f2;--overdue:#c50f1f;--ink:#242424;--muted:#6b6b6b;--line:#e6e6e6}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#f4f6f8;color:var(--ink);font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:640px;margin:0 auto;padding:16px 14px 40px}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.lg{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#0f6cbd,#2aa0e0);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+h1{font-size:22px;margin:0;font-weight:700}
+.stamp{color:var(--muted);font-size:12px;margin:2px 0 14px 40px}
+.kpis{display:flex;gap:10px;margin-bottom:18px}
+.kpi{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 8px;text-align:center}
+.kpi b{display:block;font-size:24px;font-weight:800}.kpi span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.kpi.o b{color:var(--overdue)}
+.fbar{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0;margin-bottom:8px;background:#f4f6f8}
+.fchip{border:1px solid var(--line);background:#fff;border-radius:18px;padding:8px 14px;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.fchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fchip .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.fchip.tog.on{background:var(--pbha);border-color:var(--pbha)}
+.sec{margin-bottom:22px}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.sc{margin-left:auto;color:var(--muted);font-size:12px;font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:14px;font-size:13px;font-weight:700}
+.pill .d{width:8px;height:8px;border-radius:50%}
+.dom-Personal{background:var(--personal-bg);color:var(--personal)}.dom-PBHA{background:var(--pbha-bg);color:var(--pbha)}.dom-Elmhurst{background:var(--elmhurst-bg);color:var(--elmhurst)}
+.billpill{background:#dcedda;color:#1c6b1c}
+.billsec{background:#edf6ed;border:1px solid #cfe4cd;border-radius:12px;padding:12px 12px 6px}
+.billsec .sh{margin-bottom:12px}
+.billtotal{padding:9px 4px 3px;border-top:1px dashed #cfe4cd;font-size:13.5px;color:var(--muted);font-weight:600}
+.billtotal b{color:var(--ink);font-size:15px;font-weight:800}
+.st-Completed{background:var(--done-bg);color:var(--done)}.st-InProgress{background:var(--prog-bg);color:var(--prog)}.st-Pending{background:var(--pending-bg);color:var(--pending)}
+.c{background:#fff;border:1px solid var(--line);border-left:4px solid #ccc;border-radius:10px;padding:13px 14px;margin-bottom:10px}
+.c.dl-Personal{border-left-color:var(--personal)}.c.dl-PBHA{border-left-color:var(--pbha)}.c.dl-Elmhurst{border-left-color:var(--elmhurst)}
+.c.dn{opacity:.5}.c.dn .ct{text-decoration:line-through}
+.ct{font-weight:600;font-size:16px;line-height:1.35;margin-bottom:9px}
+.cm{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.pr{font-size:13px;font-weight:700}.pri-High{color:var(--overdue)}.pri-Medium{color:var(--prog)}.pri-Low{color:var(--muted)}
+.du{font-size:13px;font-weight:600}.du.over{color:var(--overdue)}.du.soon{color:var(--prog)}
+.cn{margin-top:8px;color:var(--muted);font-size:13.5px;line-height:1.4}
+.empty{text-align:center;color:var(--muted);padding:50px 20px}
+.foot{text-align:center;color:#9aa0a6;font-size:11px;margin-top:20px}
+</style></head><body><div class="wrap">
+<div class="hd"><div class="lg">&#9636;</div><h1>My Tasks</h1></div>
+<div class="stamp">Read-only &middot; updated Aug 5, 8:39 PM</div>
+<div class="kpis">
+  <div class="kpi"><b>6</b><span>Open</span></div>
+  <div class="kpi o"><b>0</b><span>Overdue</span></div>
+  <div class="kpi"><b>0</b><span>Done</span></div>
+</div>
+<div class="fbar" id="fbar">
+  <button class="fchip on" data-f="all">All</button>
+  <button class="fchip" data-f="Personal"><span class="dot" style="background:var(--personal)"></span>Personal</button>
+  <button class="fchip" data-f="PBHA"><span class="dot" style="background:var(--pbha)"></span>PBHA</button>
+  <button class="fchip" data-f="Elmhurst"><span class="dot" style="background:var(--elmhurst)"></span>Elmhurst</button>
+  <button class="fchip tog" id="hideDone">Hide done</button>
+</div>
+<div class="sec billsec" id="billsec"><div class="sh"><span class="pill billpill">&#128197; Upcoming Bills</span><span class="sc">10 tracked</span></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="1511.62">
+      <div class="ct">LOC Loan (Line of Credit)</div>
+      <div class="cm">
+        <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
+        <span class="du soon">Sat, Aug 8 &middot; Due soon</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
+      </div><div class="cn">Elmhurst line-of-credit loan. $1,511.62/mo. Loan #01700873212-00001, 7.05%. Due 8th of month.</div></div><div class="c bc dl-Personal" data-dom="Personal" data-amt="0">
+      <div class="ct">Amex Gold</div>
+      <div class="cm">
+        <span class="pill dom-Personal"><span class="d" style="background:var(--personal)"></span>Personal</span>
+        <span class="du ">Thu, Aug 13</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
+      </div><div class="cn">Amex Gold (Personal). Statement payment due date ~13th. Aug 2026 statement due 08/13.</div></div><div class="c bc dl-PBHA" data-dom="PBHA" data-amt="0">
+      <div class="ct">Amex Platinum Business</div>
+      <div class="cm">
+        <span class="pill dom-PBHA"><span class="d" style="background:var(--pbha)"></span>PBHA</span>
+        <span class="du ">Fri, Aug 14</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
+      </div><div class="cn">Amex Platinum Business card (PBHA INC). Statement payment due date ~14th. Aug 2026 statement due 08/14.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="2887.62">
+      <div class="ct">1075 Smith St – Eastern Bank Loan</div>
+      <div class="cm">
+        <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
+        <span class="du ">Sat, Aug 15</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
+      </div><div class="cn">Elmhurst loan. $2,887.62/mo. Eastern Bank, Loan #01700873208-00001, 4.25%. Due 15th of month.</div></div><div class="c bc dl-PBHA" data-dom="PBHA" data-amt="0">
+      <div class="ct">Chase Prime Visa</div>
+      <div class="cm">
+        <span class="pill dom-PBHA"><span class="d" style="background:var(--pbha)"></span>PBHA</span>
+        <span class="du ">Sun, Aug 23</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
+      </div><div class="cn">Chase Prime Visa. Statement payment due date ~23rd. Aug 2026 statement due 08/23.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="2115.76">
+      <div class="ct">1075 Smith St – SBA Loan</div>
+      <div class="cm">
+        <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
+        <span class="du ">Tue, Sep 1</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
+      </div><div class="cn">Elmhurst loan. $2,115.76/mo. SBA, Loan #2608187010, 4.083%. Due 1st of month.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="1798.39">
+      <div class="ct">1300 Division – Eastern Bank Loan</div>
+      <div class="cm">
+        <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
+        <span class="du ">Tue, Sep 1</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
+      </div><div class="cn">Elmhurst loan. $1,798.39/mo. Eastern Bank, Loan #03562958813-00001, 6.45%. Due 1st of month.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="1563.87">
+      <div class="ct">1300 Division – SBA Loan</div>
+      <div class="cm">
+        <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
+        <span class="du ">Tue, Sep 1</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
+      </div><div class="cn">Elmhurst loan. $1,563.87/mo. SBA, Loan #03562959225-00001, 5.03%. Due 1st of month.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="742.5500000000001">
+      <div class="ct">West Warwick Property Tax</div>
+      <div class="cm">
+        <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
+        <span class="du ">Thu, Oct 15</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Quarterly (Jan, Apr, Jul, Oct)</span>
+      </div><div class="cn">West Warwick RI real estate tax — Elmhurst Commercial Properties, Acct 03-0007-11. Annual $8,910.62 (~$2,227.65/quarter). Due dates: Jul 15, Oct 15, Jan 15, Apr 15.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="0">
+      <div class="ct">Providence Property Tax</div>
+      <div class="cm">
+        <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
+        <span class="du ">Sat, Oct 24</span>
+        <span class="pr" style="color:var(--muted);font-weight:600">Quarterly (Jan, Apr, Jul, Oct)</span>
+      </div><div class="cn">Providence RI real estate tax (Elmhurst). Due dates: Jul 24, Oct 24, Jan 24, Apr 24. If the due date is a weekend, payment is due the following Monday.</div></div><div class="billtotal" id="billtotal"></div></div>
+<div class="sec" data-dom="Personal"><div class="sh"><span class="pill dom-Personal"><span class="d" style="background:var(--personal)"></span>Personal</span><span class="sc">2 open</span></div><div class="c dl-Personal ">
+      <div class="ct">Get Sean Tax Info</div>
+      <div class="cm">
+        <span class="pill st-Pending">Pending</span>
+        <span class="pr pri-High">&#9650; High</span>
+        <span class="du soon">Aug 7</span>
+      </div></div><div class="c dl-Personal ">
+      <div class="ct">Call E*Trade and arrange joint savings for Izzy</div>
+      <div class="cm">
+        <span class="pill st-Pending">Pending</span>
+        <span class="pr pri-Medium">&#9670; Medium</span>
+        
+      </div></div></div><div class="sec" data-dom="PBHA"><div class="sh"><span class="pill dom-PBHA"><span class="d" style="background:var(--pbha)"></span>PBHA</span><span class="sc">3 open</span></div><div class="c dl-PBHA ">
+      <div class="ct">Pay Phalanx Engineering</div>
+      <div class="cm">
+        <span class="pill st-Pending">Pending</span>
+        <span class="pr pri-Medium">&#9670; Medium</span>
+        
+      </div></div><div class="c dl-PBHA ">
+      <div class="ct">Contact John Roberts about scheduling clearing out the basement</div>
+      <div class="cm">
+        <span class="pill st-Pending">Pending</span>
+        <span class="pr pri-Medium">&#9670; Medium</span>
+        
+      </div></div><div class="c dl-PBHA ">
+      <div class="ct">Finish installing office numbers and signs</div>
+      <div class="cm">
+        <span class="pill st-Pending">Pending</span>
+        <span class="pr pri-Medium">&#9670; Medium</span>
+        
+      </div></div></div><div class="sec" data-dom="Elmhurst"><div class="sh"><span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span><span class="sc">1 open</span></div><div class="c dl-Elmhurst ">
+      <div class="ct">Follow up on PVD office signs for Heart and Wellness Chiropractic</div>
+      <div class="cm">
+        <span class="pill st-Pending">Pending</span>
+        <span class="pr pri-Medium">&#9670; Medium</span>
+        
+      </div></div></div>
+<div class="foot">Edit in the Task Tracker on your Mac &middot; changes sync here via iCloud</div>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('fbar'); if(!bar) return;
+  var cur='all', hideDone=false;
+  function apply(){
+    var secs=document.querySelectorAll('.sec:not(.billsec)');
+    for(var i=0;i<secs.length;i++){ secs[i].style.display=(cur==='all'||secs[i].getAttribute('data-dom')===cur)?'':'none'; }
+    var done=document.querySelectorAll('.c.dn');
+    for(var j=0;j<done.length;j++){ done[j].style.display=hideDone?'none':''; }
+    var bsec=document.getElementById('billsec');
+    if(bsec){
+      var bcards=bsec.querySelectorAll('.bc'), anyVis=false, tot=0;
+      for(var b=0;b<bcards.length;b++){ var show=(cur==='all'||bcards[b].getAttribute('data-dom')===cur); bcards[b].style.display=show?'':'none'; if(show){anyVis=true; tot+=parseFloat(bcards[b].getAttribute('data-amt'))||0;} }
+      bsec.style.display=anyVis?'':'none';
+      var bt=document.getElementById('billtotal');
+      if(bt){ if(tot>0){ bt.style.display=''; bt.innerHTML='&#8776; <b>$'+Math.round(tot).toLocaleString('en-US')+'</b> / month in fixed bills'; } else { bt.style.display='none'; } }
+    }
+  }
+  apply();
+  var chips=bar.querySelectorAll('.fchip[data-f]');
+  for(var k=0;k<chips.length;k++){ chips[k].addEventListener('click',function(){
+    for(var m=0;m<chips.length;m++){ chips[m].classList.remove('on'); }
+    this.classList.add('on'); cur=this.getAttribute('data-f'); apply();
+  }); }
+  var hd=document.getElementById('hideDone');
+  if(hd){ hd.addEventListener('click',function(){ hideDone=!hideDone; hd.classList.toggle('on',hideDone); apply(); }); }
+})();
+</script>
+</body></html>
