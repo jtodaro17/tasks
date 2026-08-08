@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-build="1786208570313"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="My Tasks"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#0f6cbd">
+<!DOCTYPE html><html lang="en" data-build="1786208702512"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="My Tasks"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#0f6cbd">
 <style>
 :root{--personal:#8b5cf6;--personal-bg:#f3efff;--pbha:#0f6cbd;--pbha-bg:#eaf3fb;--elmhurst:#c2410c;--elmhurst-bg:#fdf0e9;--done:#107c10;--done-bg:#e7f4e7;--prog:#b88217;--prog-bg:#fdf6e3;--pending:#616161;--pending-bg:#eef0f2;--overdue:#c50f1f;--ink:#242424;--muted:#6b6b6b;--line:#e6e6e6}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#f4f6f8;color:var(--ink);font-size:16px;-webkit-text-size-adjust:100%}
@@ -38,14 +38,14 @@ h1{font-size:22px;margin:0;font-weight:700}
 .cn{margin-top:8px;color:var(--muted);font-size:13.5px;line-height:1.4}
 .empty{text-align:center;color:var(--muted);padding:50px 20px}
 .foot{text-align:center;color:#9aa0a6;font-size:11px;margin-top:20px}
-.rbtn{margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:50%;width:38px;height:38px;font-size:19px;line-height:1;color:var(--pbha);cursor:pointer;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.06)}
-.rbtn:active{background:var(--pbha-bg)}
+.rbtn{margin-left:auto;border:none;background:linear-gradient(135deg,#0f6cbd,#2aa0e0);border-radius:50%;width:38px;height:38px;line-height:1;color:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(15,108,189,.35)}
+.rbtn:active{filter:brightness(.85)}
 .rbtn.spin{animation:rpulse .6s ease-in-out infinite alternate}
 @keyframes rpulse{to{opacity:.35;transform:scale(.9)}}
 #refreshNote{margin-left:8px;color:var(--done);font-weight:700;opacity:0;transition:opacity .3s}
 </style></head><body><div class="wrap">
 <div class="hd"><div class="lg"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 5V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13.5l2.5 2.5L16 11"/></svg></div><h1>My Tasks</h1><button id="refreshBtn" class="rbtn" aria-label="Refresh"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.88 16.09A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 14.29"/><path d="M12 12v9"/><path d="M8 17l4 4 4-4"/></svg></button></div>
-<div class="stamp">Read-only &middot; updated Aug 8, 1:02 PM<span id="refreshNote"></span></div>
+<div class="stamp">Read-only &middot; updated Aug 8, 1:05 PM<span id="refreshNote"></span></div>
 <div class="kpis">
   <div class="kpi"><b>8</b><span>Open</span></div>
   <div class="kpi o"><b>4</b><span>Overdue</span></div>
