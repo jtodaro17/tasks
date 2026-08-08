@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="My Tasks"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#0f6cbd">
+<!DOCTYPE html><html lang="en" data-build="1786207195459"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="My Tasks"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#0f6cbd">
 <style>
 :root{--personal:#8b5cf6;--personal-bg:#f3efff;--pbha:#0f6cbd;--pbha-bg:#eaf3fb;--elmhurst:#c2410c;--elmhurst-bg:#fdf0e9;--done:#107c10;--done-bg:#e7f4e7;--prog:#b88217;--prog-bg:#fdf6e3;--pending:#616161;--pending-bg:#eef0f2;--overdue:#c50f1f;--ink:#242424;--muted:#6b6b6b;--line:#e6e6e6}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#f4f6f8;color:var(--ink);font-size:16px;-webkit-text-size-adjust:100%}
@@ -40,11 +40,11 @@ h1{font-size:22px;margin:0;font-weight:700}
 .foot{text-align:center;color:#9aa0a6;font-size:11px;margin-top:20px}
 </style></head><body><div class="wrap">
 <div class="hd"><div class="lg">&#9636;</div><h1>My Tasks</h1></div>
-<div class="stamp">Read-only &middot; updated Aug 7, 6:24 PM</div>
+<div class="stamp">Read-only &middot; updated Aug 8, 12:39 PM</div>
 <div class="kpis">
-  <div class="kpi"><b>11</b><span>Open</span></div>
-  <div class="kpi o"><b>0</b><span>Overdue</span></div>
-  <div class="kpi"><b>1</b><span>Done</span></div>
+  <div class="kpi"><b>10</b><span>Open</span></div>
+  <div class="kpi o"><b>4</b><span>Overdue</span></div>
+  <div class="kpi"><b>2</b><span>Done</span></div>
 </div>
 <div class="fbar" id="fbar">
   <button class="fchip on" data-f="all">All</button>
@@ -75,7 +75,7 @@ h1{font-size:22px;margin:0;font-weight:700}
       <div class="ct">1075 Smith St – Eastern Bank Loan</div>
       <div class="cm">
         <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
-        <span class="du ">Sat, Aug 15</span>
+        <span class="du soon">Sat, Aug 15 &middot; Due soon</span>
         <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
       </div><div class="cn">Elmhurst loan. $2,887.62/mo. Eastern Bank, Loan #01700873208-00001, 4.25%. Due 15th of month.</div></div><div class="c bc dl-PBHA" data-dom="PBHA" data-amt="0">
       <div class="ct">Chase Prime Visa</div>
@@ -114,18 +114,12 @@ h1{font-size:22px;margin:0;font-weight:700}
         <span class="du ">Sat, Oct 24</span>
         <span class="pr" style="color:var(--muted);font-weight:600">Quarterly (Jan, Apr, Jul, Oct)</span>
       </div><div class="cn">Providence RI real estate tax (Elmhurst). Due dates: Jul 24, Oct 24, Jan 24, Apr 24. If the due date is a weekend, payment is due the following Monday.</div></div><div class="billtotal" id="billtotal"></div></div>
-<div class="sec" data-dom="Personal"><div class="sh"><span class="pill dom-Personal"><span class="d" style="background:var(--personal)"></span>Personal</span><span class="sc">6 open</span></div><div class="c dl-Personal ">
+<div class="sec" data-dom="Personal"><div class="sh"><span class="pill dom-Personal"><span class="d" style="background:var(--personal)"></span>Personal</span><span class="sc">5 open</span></div><div class="c dl-Personal ">
       <div class="ct">Get Sean Tax Info</div>
       <div class="cm">
         <span class="pill st-Pending">Pending</span>
         <span class="pr pri-High">&#9650; High</span>
-        <span class="du soon">Aug 7</span>
-      </div></div><div class="c dl-Personal ">
-      <div class="ct">Pick up meds at CVS</div>
-      <div class="cm">
-        <span class="pill st-Pending">Pending</span>
-        <span class="pr pri-Medium">&#9670; Medium</span>
-        <span class="du soon">Aug 8</span>
+        <span class="du over">Aug 7 &middot; Overdue</span>
       </div></div><div class="c dl-Personal ">
       <div class="ct">Drop off dry cleaning</div>
       <div class="cm">
@@ -150,18 +144,24 @@ h1{font-size:22px;margin:0;font-weight:700}
         <span class="pill st-Pending">Pending</span>
         <span class="pr pri-Medium">&#9670; Medium</span>
         <span class="du ">Aug 12</span>
+      </div></div><div class="c dl-Personal dn">
+      <div class="ct">Pick up meds at CVS</div>
+      <div class="cm">
+        <span class="pill st-Completed">Completed</span>
+        <span class="pr pri-Medium">&#9670; Medium</span>
+        <span class="du ">Aug 8</span>
       </div></div></div><div class="sec" data-dom="PBHA"><div class="sh"><span class="pill dom-PBHA"><span class="d" style="background:var(--pbha)"></span>PBHA</span><span class="sc">4 open</span></div><div class="c dl-PBHA ">
       <div class="ct">Pay Phalanx Engineering</div>
       <div class="cm">
         <span class="pill st-Pending">Pending</span>
         <span class="pr pri-Medium">&#9670; Medium</span>
-        <span class="du soon">Aug 7</span>
+        <span class="du over">Aug 7 &middot; Overdue</span>
       </div></div><div class="c dl-PBHA ">
       <div class="ct">Contact John Roberts about scheduling clearing out the basement</div>
       <div class="cm">
         <span class="pill st-Pending">Pending</span>
         <span class="pr pri-Medium">&#9670; Medium</span>
-        <span class="du soon">Aug 7</span>
+        <span class="du over">Aug 7 &middot; Overdue</span>
       </div></div><div class="c dl-PBHA ">
       <div class="ct">Finish installing office numbers and signs</div>
       <div class="cm">
@@ -185,7 +185,7 @@ h1{font-size:22px;margin:0;font-weight:700}
       <div class="cm">
         <span class="pill st-Pending">Pending</span>
         <span class="pr pri-Medium">&#9670; Medium</span>
-        <span class="du soon">Aug 7</span>
+        <span class="du over">Aug 7 &middot; Overdue</span>
       </div></div></div>
 <div class="foot">Edit in the Task Tracker on your Mac &middot; updates appear here automatically</div>
 </div>
@@ -215,6 +215,29 @@ h1{font-size:22px;margin:0;font-weight:700}
   }); }
   var hd=document.getElementById('hideDone');
   if(hd){ hd.addEventListener('click',function(){ hideDone=!hideDone; hd.classList.toggle('on',hideDone); apply(); }); }
+})();
+</script>
+<script>
+/* auto-refresh: fetch a fresh copy on open / return-to-app; swap in if the build id changed */
+(function(){
+  if(location.protocol.indexOf('http')!==0) return; /* skip when opened as a local file */
+  var MY=document.documentElement.getAttribute('data-build')||'';
+  var busy=false;
+  function check(){
+    if(busy) return; busy=true;
+    fetch(location.pathname+'?fresh='+Date.now(),{cache:'no-store'})
+      .then(function(r){ return r.ok?r.text():null; })
+      .then(function(t){
+        busy=false;
+        if(!t) return;
+        var m=t.match(/data-build="(\d+)"/);
+        if(m&&m[1]!==MY){ document.open(); document.write(t); document.close(); }
+      })
+      .catch(function(){ busy=false; });
+  }
+  check();
+  document.addEventListener('visibilitychange',function(){ if(!document.hidden) check(); });
+  window.addEventListener('pageshow',function(e){ if(e.persisted) check(); });
 })();
 </script>
 </body></html>
