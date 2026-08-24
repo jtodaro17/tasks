@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-build="1787577430297"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="My Tasks"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#0f6cbd">
+<!DOCTYPE html><html lang="en" data-build="1787580532342"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="My Tasks"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#0f6cbd">
 <style>
 :root{--personal:#8b5cf6;--personal-bg:#f3efff;--pbha:#0f6cbd;--pbha-bg:#eaf3fb;--elmhurst:#c2410c;--elmhurst-bg:#fdf0e9;--done:#107c10;--done-bg:#e7f4e7;--prog:#b88217;--prog-bg:#fdf6e3;--pending:#616161;--pending-bg:#eef0f2;--overdue:#c50f1f;--ink:#242424;--muted:#6b6b6b;--line:#e6e6e6}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#f4f6f8;color:var(--ink);font-size:16px;-webkit-text-size-adjust:100%}
@@ -45,18 +45,23 @@ h1{font-size:22px;margin:0;font-weight:700}
 .rbtn.spin{animation:rpulse .6s ease-in-out infinite alternate}
 @keyframes rpulse{to{opacity:.35;transform:scale(.9)}}
 #refreshNote{margin-left:8px;color:var(--done);font-weight:700;opacity:0;transition:opacity .3s}
-.cap{background:#fff;border:1px solid #bfd3f5;border-radius:12px;padding:12px;margin-bottom:18px}
-.caprow{display:flex;gap:8px}
-.cap input,.cap select{font-size:16px;padding:9px 10px;border:1px solid var(--line);border-radius:9px;font-family:inherit;color:var(--ink);background:#fff;-webkit-appearance:none}
+.cap{background:#fff;border:1px solid #bfd3f5;border-radius:12px;padding:10px;margin-bottom:18px}
+.caprow{display:flex;gap:7px}
+.cap input,.cap select{font-size:16px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;font-family:inherit;color:var(--ink);background:#fff;-webkit-appearance:none}
 #capT{flex:1;min-width:0}
-.capbtn{flex:none;border:none;background:linear-gradient(135deg,#0f6cbd,#2aa0e0);color:#fff;font-weight:700;border-radius:9px;padding:0 16px;font-size:15px;-webkit-tap-highlight-color:transparent}
+.capbtn{flex:none;border:none;background:linear-gradient(135deg,#0f6cbd,#2aa0e0);color:#fff;font-weight:700;border-radius:9px;padding:0 15px;font-size:15px;-webkit-tap-highlight-color:transparent}
 .capbtn:disabled{opacity:.45}
-.capopts{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px;align-items:center}
-.dchip{border:1px solid var(--line);background:#fff;border-radius:16px;padding:7px 11px;font-size:12.5px;font-weight:700;color:var(--muted);-webkit-tap-highlight-color:transparent}
+.capopts{display:flex;gap:6px;margin-top:7px;align-items:center}
+.dchip{flex:1;border:1px solid var(--line);background:#fff;border-radius:16px;padding:7px 4px;font-size:12.5px;font-weight:700;color:var(--muted);white-space:nowrap;-webkit-tap-highlight-color:transparent}
 .dchip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle}
 .dchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.capmsg{font-size:12.5px;font-weight:600;margin-top:9px;min-height:16px;color:var(--muted);line-height:1.4}
-.pend{margin-top:6px}
+/* priority + due share one row; the date input must never collapse to nothing when empty */
+.caprow2{display:flex;gap:7px;margin-top:7px}
+.caprow2 label{flex:1;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.caprow2 select,.caprow2 input{flex:1;min-width:0;width:100%}
+.capmsg{font-size:12.5px;font-weight:600;margin-top:8px;color:var(--muted);line-height:1.4}
+.capmsg:empty{display:none}
+.pend:empty{display:none}
 .pendh{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:8px 0 6px}
 .pendi{background:#fff8e6;border:1px solid #f3dfae;border-radius:8px;padding:8px 10px;margin-bottom:6px;font-size:14px;font-weight:600}
 .pendi span{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:2px}
@@ -64,7 +69,7 @@ h1{font-size:22px;margin:0;font-weight:700}
 #capTok{flex:1;min-width:0}
 </style></head><body><div class="wrap">
 <div class="hd"><div class="lg"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path fill-rule="evenodd" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-1.8 14.4l-4.1-4.1 1.4-1.4 2.7 2.7 6.6-6.6 1.4 1.4-8 8z"/></svg></div><h1>My Tasks</h1><button id="refreshBtn" class="rbtn" aria-label="Refresh"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg></button></div>
-<div class="stamp">updated Aug 24, 9:17 AM<span id="refreshNote"></span></div>
+<div class="stamp">updated Aug 24, 10:08 AM<span id="refreshNote"></span></div>
 <div class="kpis">
   <div class="kpi"><b>9</b><span>Open</span></div>
   <div class="kpi o"><b>8</b><span>Overdue</span></div>
@@ -86,8 +91,10 @@ h1{font-size:22px;margin:0;font-weight:700}
     <button class="dchip on" data-d="Personal"><span class="dot" style="background:var(--personal)"></span>Personal</button>
     <button class="dchip" data-d="PBHA"><span class="dot" style="background:var(--pbha)"></span>PBHA</button>
     <button class="dchip" data-d="Elmhurst"><span class="dot" style="background:var(--elmhurst)"></span>Elmhurst</button>
-    <select id="capP" aria-label="Priority"><option>High</option><option selected>Medium</option><option>Low</option></select>
-    <input id="capD" type="date" aria-label="Due date">
+  </div>
+  <div class="caprow2">
+    <label>Pri <select id="capP" aria-label="Priority"><option>High</option><option selected>Medium</option><option>Low</option></select></label>
+    <label>Due <input id="capD" type="date" aria-label="Due date"></label>
   </div>
   <div class="capmsg" id="capMsg"></div>
   <div class="tokrow" id="tokRow" style="display:none">
