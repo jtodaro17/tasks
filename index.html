@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-build="1787580590467"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="My Tasks"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#0f6cbd">
+<!DOCTYPE html><html lang="en" data-build="1787679538425"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Tasks</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="My Tasks"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#0f6cbd">
 <style>
 :root{--personal:#8b5cf6;--personal-bg:#f3efff;--pbha:#0f6cbd;--pbha-bg:#eaf3fb;--elmhurst:#c2410c;--elmhurst-bg:#fdf0e9;--done:#107c10;--done-bg:#e7f4e7;--prog:#b88217;--prog-bg:#fdf6e3;--pending:#616161;--pending-bg:#eef0f2;--overdue:#c50f1f;--ink:#242424;--muted:#6b6b6b;--line:#e6e6e6}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#f4f6f8;color:var(--ink);font-size:16px;-webkit-text-size-adjust:100%}
@@ -45,35 +45,13 @@ h1{font-size:22px;margin:0;font-weight:700}
 .rbtn.spin{animation:rpulse .6s ease-in-out infinite alternate}
 @keyframes rpulse{to{opacity:.35;transform:scale(.9)}}
 #refreshNote{margin-left:8px;color:var(--done);font-weight:700;opacity:0;transition:opacity .3s}
-.cap{background:#fff;border:1px solid #bfd3f5;border-radius:12px;padding:10px;margin-bottom:18px}
-.caprow{display:flex;gap:7px}
-.cap input,.cap select{font-size:16px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;font-family:inherit;color:var(--ink);background:#fff;-webkit-appearance:none}
-#capT{flex:1;min-width:0}
-.capbtn{flex:none;border:none;background:linear-gradient(135deg,#0f6cbd,#2aa0e0);color:#fff;font-weight:700;border-radius:9px;padding:0 15px;font-size:15px;-webkit-tap-highlight-color:transparent}
-.capbtn:disabled{opacity:.45}
-.capopts{display:flex;gap:6px;margin-top:7px;align-items:center}
-.dchip{flex:1;border:1px solid var(--line);background:#fff;border-radius:16px;padding:7px 4px;font-size:12.5px;font-weight:700;color:var(--muted);white-space:nowrap;-webkit-tap-highlight-color:transparent}
-.dchip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle}
-.dchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-/* priority + due share one row; the date input must never collapse to nothing when empty */
-.caprow2{display:flex;gap:7px;margin-top:7px}
-.caprow2 label{flex:1;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
-.caprow2 select,.caprow2 input{flex:1;min-width:0;width:100%}
-.capmsg{font-size:12.5px;font-weight:600;margin-top:8px;color:var(--muted);line-height:1.4}
-.capmsg:empty{display:none}
-.pend:empty{display:none}
-.pendh{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:8px 0 6px}
-.pendi{background:#fff8e6;border:1px solid #f3dfae;border-radius:8px;padding:8px 10px;margin-bottom:6px;font-size:14px;font-weight:600}
-.pendi span{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:2px}
-.tokrow{display:flex;gap:8px;margin-top:9px}
-#capTok{flex:1;min-width:0}
 </style></head><body><div class="wrap">
 <div class="hd"><div class="lg"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path fill-rule="evenodd" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-1.8 14.4l-4.1-4.1 1.4-1.4 2.7 2.7 6.6-6.6 1.4 1.4-8 8z"/></svg></div><h1>My Tasks</h1><button id="refreshBtn" class="rbtn" aria-label="Refresh"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg></button></div>
-<div class="stamp">updated Aug 24, 10:09 AM<span id="refreshNote"></span></div>
+<div class="stamp">Read-only &middot; updated Aug 25, 1:38 PM<span id="refreshNote"></span></div>
 <div class="kpis">
-  <div class="kpi"><b>10</b><span>Open</span></div>
-  <div class="kpi o"><b>8</b><span>Overdue</span></div>
-  <div class="kpi"><b>16</b><span>Done</span></div>
+  <div class="kpi"><b>9</b><span>Open</span></div>
+  <div class="kpi o"><b>9</b><span>Overdue</span></div>
+  <div class="kpi"><b>17</b><span>Done</span></div>
 </div>
 <div class="fbar" id="fbar">
   <button class="fchip on" data-f="all">All</button>
@@ -82,44 +60,23 @@ h1{font-size:22px;margin:0;font-weight:700}
   <button class="fchip" data-f="Elmhurst"><span class="dot" style="background:var(--elmhurst)"></span>Elmhurst</button>
   <button class="fchip tog" id="hideDone" title="Hide completed" aria-label="Hide completed"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:block"><path d="M12 7a5 5 0 0 1 5 5c0 .65-.13 1.26-.36 1.83l2.92 2.92A11.82 11.82 0 0 0 23 12s-3.5-7-11-7c-1.4 0-2.7.25-3.87.7l2.04 2.04C10.74 7.13 11.35 7 12 7zM2.71 3.16 1.29 4.57l2.53 2.53A11.9 11.9 0 0 0 1 12s3.5 7 11 7c1.87 0 3.57-.44 5.03-1.14l3.4 3.4 1.41-1.41L2.71 3.16zM12 17a5 5 0 0 1-5-5c0-.77.18-1.5.49-2.14l1.57 1.57a3 3 0 0 0 3.51 3.51l1.57 1.57c-.64.31-1.37.49-2.14.49zm-.16-7.98 3.14 3.14A3 3 0 0 0 11.84 9.02z"/></svg></button>
 </div>
-<div class="cap" id="cap">
-  <div class="caprow">
-    <input id="capT" type="text" placeholder="Add a task&hellip;" autocomplete="off" autocapitalize="sentences" enterkeyhint="done">
-    <button id="capAdd" class="capbtn">Add</button>
-  </div>
-  <div class="capopts">
-    <button class="dchip on" data-d="Personal"><span class="dot" style="background:var(--personal)"></span>Personal</button>
-    <button class="dchip" data-d="PBHA"><span class="dot" style="background:var(--pbha)"></span>PBHA</button>
-    <button class="dchip" data-d="Elmhurst"><span class="dot" style="background:var(--elmhurst)"></span>Elmhurst</button>
-  </div>
-  <div class="caprow2">
-    <label>Pri <select id="capP" aria-label="Priority"><option>High</option><option selected>Medium</option><option>Low</option></select></label>
-    <label>Due <input id="capD" type="date" aria-label="Due date"></label>
-  </div>
-  <div class="capmsg" id="capMsg"></div>
-  <div class="tokrow" id="tokRow" style="display:none">
-    <input id="capTok" type="password" placeholder="Paste GitHub token" autocomplete="off">
-    <button id="tokSave" class="capbtn">Save</button>
-  </div>
-  <div class="pend" id="capPend"></div>
-</div>
 <div class="sec billsec" id="billsec"><div class="sh"><span class="pill billpill"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px"><path fill-rule="evenodd" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10z"/></svg> Upcoming Bills</span><span class="sc">10 tracked</span></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="2115.76">
       <div class="ct">1075 Smith St – SBA Loan</div>
       <div class="cm">
         <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
-        <span class="du ">Tue, Sep 1</span>
+        <span class="du soon">Tue, Sep 1 &middot; Due soon</span>
         <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
       </div><div class="cn">Elmhurst loan. $2,115.76/mo. SBA, Loan #2608187010, 4.083%. Due 1st of month.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="1798.39">
       <div class="ct">1300 Division – Eastern Bank Loan</div>
       <div class="cm">
         <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
-        <span class="du ">Tue, Sep 1</span>
+        <span class="du soon">Tue, Sep 1 &middot; Due soon</span>
         <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
       </div><div class="cn">Elmhurst loan. $1,798.39/mo. Eastern Bank, Loan #03562958813-00001, 6.45%. Due 1st of month.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="1563.87">
       <div class="ct">1300 Division – SBA Loan</div>
       <div class="cm">
         <span class="pill dom-Elmhurst"><span class="d" style="background:var(--elmhurst)"></span>Elmhurst</span>
-        <span class="du ">Tue, Sep 1</span>
+        <span class="du soon">Tue, Sep 1 &middot; Due soon</span>
         <span class="pr" style="color:var(--muted);font-weight:600">Monthly</span>
       </div><div class="cn">Elmhurst loan. $1,563.87/mo. SBA, Loan #03562959225-00001, 5.03%. Due 1st of month.</div></div><div class="c bc dl-Elmhurst" data-dom="Elmhurst" data-amt="1511.62">
       <div class="ct">LOC Loan (Line of Credit)</div>
@@ -164,7 +121,7 @@ h1{font-size:22px;margin:0;font-weight:700}
         <span class="du ">Sat, Oct 24</span>
         <span class="pr" style="color:var(--muted);font-weight:600">Quarterly (Jan, Apr, Jul, Oct)</span>
       </div><div class="cn">Providence RI real estate tax (Elmhurst). Due dates: Jul 24, Oct 24, Jan 24, Apr 24. If the due date is a weekend, payment is due the following Monday.</div></div><div class="billtotal" id="billtotal"></div></div>
-<div class="sec" data-dom="Personal"><div class="sh"><span class="pill dom-Personal"><span class="d" style="background:var(--personal)"></span>Personal</span><span class="sc">5 open</span></div><div class="c dl-Personal ">
+<div class="sec" data-dom="Personal"><div class="sh"><span class="pill dom-Personal"><span class="d" style="background:var(--personal)"></span>Personal</span><span class="sc">4 open</span></div><div class="c dl-Personal ">
       <div class="ct">Get Sean Tax Info</div>
       <div class="cm">
         <span class="pill st-Pending">Pending</span>
@@ -188,12 +145,6 @@ h1{font-size:22px;margin:0;font-weight:700}
         <span class="pill st-Pending">Pending</span>
         <span class="pr pri-Medium"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px"><path d="M12 3.2l8 8.8-8 8.8L4 12z"/></svg> Medium</span>
         <span class="du over">Aug 16 &middot; Overdue</span>
-      </div></div><div class="c dl-Personal ">
-      <div class="ct">Test</div>
-      <div class="cm">
-        <span class="pill st-Pending">Pending</span>
-        <span class="pr pri-Medium"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px"><path d="M12 3.2l8 8.8-8 8.8L4 12z"/></svg> Medium</span>
-        <span class="du soon">Aug 24</span>
       </div></div><div class="c dl-Personal dn">
       <div class="ct">Pick up meds at CVS</div>
       <div class="cm">
@@ -264,6 +215,12 @@ Address: One Phillips Street, Wickford, Rhode Island, 02852, United States</div>
         <span class="pill st-Completed">Completed</span>
         <span class="pr pri-Medium"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px"><path d="M12 3.2l8 8.8-8 8.8L4 12z"/></svg> Medium</span>
         <span class="du ">Aug 16</span>
+      </div></div><div class="c dl-Personal dn">
+      <div class="ct">Test</div>
+      <div class="cm">
+        <span class="pill st-Completed">Completed</span>
+        <span class="pr pri-Medium"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px"><path d="M12 3.2l8 8.8-8 8.8L4 12z"/></svg> Medium</span>
+        <span class="du ">Aug 24</span>
       </div></div></div><div class="sec" data-dom="PBHA"><div class="sh"><span class="pill dom-PBHA"><span class="d" style="background:var(--pbha)"></span>PBHA</span><span class="sc">3 open</span></div><div class="c dl-PBHA ">
       <div class="ct">Contact John Roberts about scheduling clearing out the basement</div>
       <div class="cm">
@@ -317,7 +274,7 @@ Address: One Phillips Street, Wickford, Rhode Island, 02852, United States</div>
       <div class="cm">
         <span class="pill st-Pending">Pending</span>
         <span class="pr pri-High"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px"><path d="M12 5.5l7.5 12h-15z"/></svg> High</span>
-        <span class="du soon">Aug 24</span>
+        <span class="du over">Aug 24 &middot; Overdue</span>
       </div></div><div class="c dl-Elmhurst dn">
       <div class="ct">Call Alarm Installer</div>
       <div class="cm">
@@ -325,7 +282,7 @@ Address: One Phillips Street, Wickford, Rhode Island, 02852, United States</div>
         <span class="pr pri-High"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px"><path d="M12 5.5l7.5 12h-15z"/></svg> High</span>
         <span class="du ">Aug 13</span>
       </div></div></div>
-<div class="foot">Add tasks here or on your Mac &middot; edits and completing tasks happen on the Mac</div>
+<div class="foot">Edit in the Task Tracker on your Mac &middot; updates appear here automatically</div>
 </div>
 <script>
 (function(){
@@ -356,110 +313,6 @@ Address: One Phillips Street, Wickford, Rhode Island, 02852, United States</div>
 })();
 </script>
 <script>
-/* quick capture -> appends to inbox.json in the GitHub repo. Append-only: the Mac editor
-   pulls the inbox, merges into tasks.json and clears it, so phone and Mac never conflict. */
-(function(){
-  if(location.protocol.indexOf('http')!==0) return; /* local file: no network writes */
-  var API='https://api.github.com/repos/jtodaro17/tasks/contents/inbox.json';
-  var BR='main';
-  var dom='Personal', busy=false;
-  function el(id){ return document.getElementById(id); }
-  function tok(){ try{ return localStorage.getItem('tt_mtok')||''; }catch(e){ return ''; } }
-  function msg(t,ok){ var m=el('capMsg'); if(!m) return; m.innerHTML=t;
-    m.style.color = ok===false?'var(--overdue)' : ok===true?'var(--done)' : 'var(--muted)'; }
-  function b64e(x){ return btoa(unescape(encodeURIComponent(x))); }
-  function b64d(x){ try{ return decodeURIComponent(escape(atob(String(x).replace(/s/g,'')))); }catch(e){ return '[]'; } }
-  function esc(x){ return String(x).replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-  function hdrs(){ return { 'Authorization':'Bearer '+tok(), 'Accept':'application/vnd.github+json' }; }
-
-  function getInbox(){
-    return fetch(API+'?ref='+BR+'&nocache='+Date.now(),{cache:'no-store',headers:hdrs()})
-      .then(function(r){
-        if(r.status===404) return {list:[],sha:null};
-        if(r.status===401||r.status===403) throw new Error('token rejected');
-        if(!r.ok) throw new Error('GitHub '+r.status);
-        return r.json().then(function(j){
-          var arr=[]; try{ arr=JSON.parse(b64d(j.content))||[]; }catch(e){ arr=[]; }
-          return {list:arr, sha:j.sha};
-        });
-      });
-  }
-  function putInbox(list,sha){
-    var body={ message:'Add task from phone', content:b64e(JSON.stringify(list,null,2)), branch:BR };
-    if(sha) body.sha=sha;
-    return fetch(API,{method:'PUT',headers:hdrs(),body:JSON.stringify(body)});
-  }
-
-  function renderPending(list){
-    var box=el('capPend'); if(!box) return;
-    if(!list||!list.length){ box.innerHTML=''; return; }
-    var h='<div class="pendh">Waiting for your Mac ('+list.length+')</div>';
-    for(var i=0;i<list.length;i++){
-      var it=list[i];
-      h+='<div class="pendi">'+esc(it.title)+'<span>'+esc(it.domain||'Personal')+' &middot; '+esc(it.priority||'Medium')+(it.due?' &middot; due '+esc(it.due):'')+'</span></div>';
-    }
-    box.innerHTML=h;
-  }
-  function loadPending(){
-    /* public repo: read without the token so the list shows even before one is saved */
-    fetch(API+'?ref='+BR+'&nocache='+Date.now(),{cache:'no-store',headers:{'Accept':'application/vnd.github.raw'}})
-      .then(function(r){ return r.ok?r.text():'[]'; })
-      .then(function(t){ var a=[]; try{ a=JSON.parse(t)||[]; }catch(e){} renderPending(a); })
-      .catch(function(){});
-  }
-
-  function add(){
-    var ti=el('capT'), title=ti?ti.value.trim():'';
-    if(!title){ if(ti) ti.focus(); return; }
-    if(!tok()){ var tr=el('tokRow'); if(tr) tr.style.display='flex';
-      msg('Paste your GitHub token once to enable adding from this phone.',false); return; }
-    if(busy) return; busy=true; window.__capBusy=true;
-    var b=el('capAdd'); if(b) b.disabled=true;
-    msg('Saving&hellip;');
-    var item={ id:'ph-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7),
-      created:new Date().toISOString(), title:title, domain:dom,
-      priority:(el('capP')||{}).value||'Medium', due:(el('capD')||{}).value||'', notes:'', source:'phone' };
-    function attempt(retry){
-      return getInbox().then(function(cur){
-        var list=cur.list.concat([item]);
-        return putInbox(list,cur.sha).then(function(r){
-          if((r.status===409||r.status===422)&&!retry) return attempt(true);
-          if(!r.ok) throw new Error('GitHub '+r.status);
-          renderPending(list);
-        });
-      });
-    }
-    attempt(false).then(function(){
-      if(ti) ti.value=''; var dd=el('capD'); if(dd) dd.value='';
-      msg('&#10003; Added. It joins your list next time your Mac syncs.',true);
-    }).catch(function(e){
-      msg('Could not save: '+esc(e.message)+'. Check your token or connection.',false);
-    }).then(function(){
-      busy=false; window.__capBusy=false; if(b) b.disabled=false;
-    });
-  }
-
-  var chips=document.querySelectorAll('#cap .dchip');
-  for(var i=0;i<chips.length;i++){ chips[i].addEventListener('click',function(){
-    for(var j=0;j<chips.length;j++){ chips[j].classList.remove('on'); }
-    this.classList.add('on'); dom=this.getAttribute('data-d');
-  }); }
-  var ab=el('capAdd'); if(ab) ab.addEventListener('click',add);
-  var tf=el('capT'); if(tf) tf.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); add(); } });
-  var ts=el('tokSave');
-  if(ts) ts.addEventListener('click',function(){
-    var v=(el('capTok')||{}).value||'';
-    if(!v.trim()){ msg('Paste the token first.',false); return; }
-    try{ localStorage.setItem('tt_mtok',v.trim()); }catch(e){}
-    var tr=el('tokRow'); if(tr) tr.style.display='none';
-    var ti2=el('capTok'); if(ti2) ti2.value='';
-    msg('Token saved on this phone. Tap Add again.',true);
-  });
-  loadPending();
-  document.addEventListener('visibilitychange',function(){ if(!document.hidden) loadPending(); });
-})();
-</script>
-<script>
 /* auto-refresh: on open / return-to-app / tap of the refresh button, pull the freshest copy.
    Primary source is the GitHub contents API (updates within seconds of a Mac save — no
    Pages-deploy wait); falls back to the hosted page if the API is unreachable/rate-limited. */
@@ -475,9 +328,6 @@ Address: One Phillips Street, Wickford, Rhode Island, 02852, United States</div>
     clearTimeout(note._t); note._t=setTimeout(function(){ el.style.opacity='0'; },2000);
   }
   function apply(t){
-    var ct=document.getElementById('capT');
-    /* don't reload the page out from under a task being typed / saved */
-    if(window.__capBusy||(ct&&ct.value.trim())) return false;
     var m=t&&t.match(/data-build="(\d+)"/);
     if(m&&m[1]!==MY){ document.open(); document.write(t); document.close(); return true; }
     return false;
