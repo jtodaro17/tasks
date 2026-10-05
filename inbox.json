@@ -1,12 +1,9 @@
 [
   {
-    "id": "ph-mun7eiiw-5qt6m",
-    "created": "2026-09-29T21:43:56.747Z",
-    "title": "Create a payroll event for adding funds to HSA.",
-    "domain": "Personal",
-    "priority": "Medium",
-    "due": "2026-09-30",
-    "notes": "",
+    "id": "op-muvin2ut-t8lk1",
+    "op": "complete",
+    "taskId": "id-mu32b7xe-izn78",
+    "at": "2026-10-05T17:20:41.525Z",
     "source": "phone"
   }
 ]
